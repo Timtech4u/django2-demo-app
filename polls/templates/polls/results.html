@@ -1,3 +1,10 @@
+{% load static %}
+<!-- Bootstrap core CSS -->
+    <link href="{% static "bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "round-about.css" %}"  rel="stylesheet">
+
 <h1>{{ question.question_text }}</h1>
 
 <ul>
@@ -7,3 +14,7 @@
 </ul>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static "jquery.min.js" %}"></script>
+    <script src="{% static "bootstrap.bundle.min.js" %}"></script>
