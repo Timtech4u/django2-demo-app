@@ -17,6 +17,10 @@ class Question(models.Model):
         yesterday = now - datetime.timedelta(days=1)
         return yesterday <= self.pub_date <= now
 
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
@@ -25,3 +29,7 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+    class Meta:
+        verbose_name = "Candidate"
+        verbose_name_plural = "Candidates"

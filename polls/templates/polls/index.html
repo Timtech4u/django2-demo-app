@@ -34,27 +34,20 @@
     <div class="container">
 
       <!-- Introduction Row -->
-      <h1 class="my-4">Welcome
-        <small>Click on a Candidate to Vote</small>
+      <h1 class="my-4">
+        <small>Click on a Post to Vote</small>
       </h1>
 
       <!-- Team Members Row -->
       <div class="row">
         <div class="col-lg-12">
-          <h2 class="my-4">Candidates</h2>
+          <h2 class="my-4">Posts</h2>
         </div>
         {% if latest_question_list %}        
             {% for question in latest_question_list %}
-        <ul>           
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
-                    <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
-                    <h3>{{ question.question_text }}
-                        <small>{{ question.question_text }}</small>
-                    </h3>
-                    <a href="{% url 'polls:detail' question.id %}"> <p>Click to Vote  </p></a>
-                    </div>
-              </div>
-        </ul>              
+        <ul class="list-group">
+          <li class="list-group-item"><b>{{ question.question_text }}</b><span class="badge"><a href="{% url 'polls:detail' question.id %}"> View Candidates  </a></span></li> 
+        </ul>             
               {% endfor %}
         {% else %}
             <p>No Candidates are available.</p>
@@ -66,7 +59,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Mustapha Garba 2018</p>
       </div>
       <!-- /.container -->
     </footer>
